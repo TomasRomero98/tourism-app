@@ -4,7 +4,7 @@ import { Navbar } from "@/components/Navbar/Navbar";
 //Providers
 import { Provider } from "@/providers/provider";
 //Styles
-import "@/styles/globals.css";
+import "@/styles/globals.scss";
 
 export default function RootLayout({
   children,

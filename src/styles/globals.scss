@@ -1,0 +1,23 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "variables";
+
+:root {
+  --background: $secondary-color;
+  --foreground: $primary-color;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: $primary-color;
+    --foreground: $secondary-color;
+  }
+}
+
+body {
+  color: $primary-color;
+  background: $secondary-color;
+  font-family: Arial, Helvetica, sans-serif;
+}

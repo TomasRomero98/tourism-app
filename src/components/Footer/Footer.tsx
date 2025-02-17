@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <footer data-testid="footer">
+    <footer className="footer" data-testid="footer">
       <h1>Footer</h1>
     </footer>
   );
