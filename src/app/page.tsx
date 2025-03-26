@@ -1,5 +1,5 @@
-import { getFirestore, collection, addDoc } from "firebase/firestore";
-import { app } from "../../firebaseConfig";
+import { db } from "@/utils/firebase";
+import { collection, addDoc } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default function Home() {
@@ -12,10 +12,11 @@ export default function Home() {
     }
   });
 
-  const db = getFirestore(app);
-
   async function addData() {
-    await addDoc(collection(db, "usuarios"), { firstname: "Juan", lastname: "Martinez" });
+    await addDoc(collection(db, "usuarios"), {
+      firstname: "Tomas",
+      lastname: "Romero",
+    });
     console.log("Documento agregado!");
   }
 
