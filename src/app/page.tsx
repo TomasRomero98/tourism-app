@@ -1,6 +1,6 @@
-import { db } from "@/utils/firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { db } from "@/utils/firebase";
 
 export default function Home() {
   const auth = getAuth();
@@ -20,11 +20,11 @@ export default function Home() {
     console.log("Documento agregado!");
   }
 
-  addData(); //not working
+  //addData();
 
   return (
-    <main>
-      <h1>Hello World!</h1>
+    <main className="min-h-screen">
+      <h1 className="text-3xl font-bold underline">Hello World!</h1>
     </main>
   );
 }
