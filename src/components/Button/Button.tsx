@@ -4,10 +4,11 @@ type ButtonProps = {
   children: ReactNode;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-export const Button: FC<ButtonProps> = ({ children, ...props }) => {
-  return (
-    <button {...props} className="p-1 bg-blue-500">
-      {children}
-    </button>
-  );
-};
+export const Button: FC<ButtonProps> = ({ children, className, ...props }) => {
+    return (
+      <button className={`p-1 bg-blue-500 ${className || ""}`} {...props}>
+        {children}
+      </button>
+    );
+  };
+  

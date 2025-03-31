@@ -24,5 +24,6 @@ body {
     @apply flex;
     @apply justify-center;
     @apply items-center;
+    @apply min-h-screen;
   }
 }

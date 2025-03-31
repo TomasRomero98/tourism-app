@@ -1,7 +1,10 @@
+"use client";
 import Link from "next/link";
+import { useAuth } from "@/utils/useAuth";
 import { Button } from "../Button/Button";
 
 export const Navbar = () => {
+  const { user } = useAuth();
   return (
     <nav className="flex justify-between mb-2 bg-blue-600" data-testid="navbar">
       <div className="flex">
@@ -18,7 +21,11 @@ export const Navbar = () => {
         </Button>
       </div>
       <Button>
-        <Link href="/registrarse">Iniciar sesion</Link>
+        {user ? (
+          <Link href="/perfil">Perfil</Link>
+        ) : (
+          <Link href="/registrarse">Iniciar sesion</Link>
+        )}
       </Button>
     </nav>
   );
