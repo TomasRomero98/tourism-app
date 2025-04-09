@@ -8,7 +8,7 @@ export const UserForm = () => {
   const [password, setPassword] = useState("");
   const [isLogin, setIsLogin] = useState(true);
   const [error, setError] = useState("");
-  const { signIn, createUser, loading } = useAuth();
+  const { signIn, createUser } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

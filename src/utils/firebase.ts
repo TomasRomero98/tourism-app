@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 const config = {
   apiKey: "AIzaSyAi0YY7syQ8yqyvn4KqZ60cwVSA6LbEnAM",
@@ -12,4 +13,5 @@ const config = {
 };
 
 export const app = initializeApp(config);
-export const db = getFirestore(app);
+export const db = getFirestore(app); // colecciones y documentos en la base de datos NoSQL de Firebase
+export const mediaStorage = getStorage(app); //archivos como imágenes o videos
