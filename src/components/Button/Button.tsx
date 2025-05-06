@@ -5,10 +5,9 @@ type ButtonProps = {
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button: FC<ButtonProps> = ({ children, className, ...props }) => {
-    return (
-      <button className={`p-1 bg-blue-500 ${className || ""}`} {...props}>
-        {children}
-      </button>
-    );
-  };
-  
+  return (
+    <button className={`p-1 text-button hover:text-hover hover:scale-105 ${className || ""}`} {...props}>
+      {children}
+    </button>
+  );
+};

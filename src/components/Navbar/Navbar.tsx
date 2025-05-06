@@ -10,18 +10,17 @@ export const Navbar = () => {
   const { user, logout } = useAuth();
 
   return (
-    <nav className="flex justify-between mb-2 bg-blue-600" data-testid="navbar">
+    <nav
+      className="flex justify-between  border-b border-border sticky top-0 bg-secondary"
+      data-testid="navbar"
+    >
       <div className="flex">
-        <img
-          src="images/logo.svg"
-          alt="Logo"
-          className="w-10 h-auto bg-white"
-        />
+        <img src="images/logo.png" alt="Logo" className="w-10 h-auto" />
         <Button>
           <Link href="/">Inicio</Link>
         </Button>
         <Button>
-          <Link href="/dashboard">Paquetes de viaje</Link>
+          <Link href="/excursiones">Excursiones</Link>
         </Button>
       </div>
       {user ? (

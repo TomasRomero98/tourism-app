@@ -14,8 +14,14 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        primary: "#ffffff",
-        secondary: "#000000",
+        primary: "#2F3B24",
+        secondary: "#F9F5EF",
+        button: "#E36D2A",
+        hover: "#73893A",
+        border: "#D9CBB3",
+      },
+      backgroundImage: {
+        hero: "url('/images/bg1.jpeg')",
       },
       fontSize: {
         xs: "0.625rem",
