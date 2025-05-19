@@ -1,16 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 
 export default {
-  darkMode: "media",
+  darkMode: ["media", "class"],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx,scss}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx,scss}",
-    "./src/styles/*.{js,ts,jsx,tsx,mdx,scss}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx, css,scss}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx,css,scss}",
+    "./src/styles/*.{js,ts,jsx,tsx,mdx,css,scss}",
   ],
   theme: {
     extend: {
-      //VARIABLES
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
@@ -30,6 +29,11 @@ export default {
         lg: "1.125rem",
         xl: "1.25rem",
       },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
     },
   },
   plugins: [
@@ -37,5 +41,6 @@ export default {
       tailwindcss: {},
       autoprefixer: {},
     },
+    require("tailwindcss-animate"),
   ],
 };

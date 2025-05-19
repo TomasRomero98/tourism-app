@@ -20,13 +20,8 @@ body {
   @apply flex-col;
   @apply justify-between;
   font-family: Arial, Helvetica, sans-serif;
-  main {
-    // @apply sm:pl-10;
-    // @apply sm:pr-10;
-  }
 }
 
-// CUSTOM CLASSES
 @layer components {
   .flex-aligned {
     @apply flex;

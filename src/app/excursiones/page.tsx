@@ -1,39 +1,73 @@
 "use client";
-import { uploadImage } from "@/utils/uploadImage";
+
 import { useState } from "react";
 
 export default function Dashboard() {
-  const [file, setFile] = useState<File | null>(null);
-  const [imageUrl, setImageUrl] = useState<string | null>(null);
+  const [switchTab, setSwitchTab] = useState(false);
 
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files && event.target.files[0]) {
-      setFile(event.target.files[0]);
-    }
-  };
-  const handleUpload = async () => {
-    if (!file) return;
-
-    const url = await uploadImage(file);
-    if (url) {
-      setImageUrl(url);
-      console.log("Image uploaded successfully:", url);
-    }
-  };
   return (
     <main>
-      <h1>This is the Dashboard</h1>
-      <div>
-        <input type="file" onChange={handleFileChange} />
-        <button onClick={handleUpload}>Upload</button>
+      <section>
+        <h2>proximas excursiones</h2>
 
-        {imageUrl && (
-          <div>
-            <p>Uploaded Image:</p>
-            <img src={imageUrl} alt="Uploaded" width={200} />
+        {/* carrousel */}
+        <div className="carousel rounded-box">
+          <div className="carousel-item">
+            <img
+              src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.webp"
+              alt="Burger"
+            />
           </div>
+          <div className="carousel-item">
+            <img
+              src="https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.webp"
+              alt="Burger"
+            />
+          </div>
+          <div className="carousel-item">
+            <img
+              src="https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.webp"
+              alt="Burger"
+            />
+          </div>
+          <div className="carousel-item">
+            <img
+              src="https://img.daisyui.com/images/stock/photo-1494253109108-2e30c049369b.webp"
+              alt="Burger"
+            />
+          </div>
+          <div className="carousel-item">
+            <img
+              src="https://img.daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.webp"
+              alt="Burger"
+            />
+          </div>
+          <div className="carousel-item">
+            <img
+              src="https://img.daisyui.com/images/stock/photo-1559181567-c3190ca9959b.webp"
+              alt="Burger"
+            />
+          </div>
+          <div className="carousel-item">
+            <img
+              src="https://img.daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.webp"
+              alt="Burger"
+            />
+          </div>
+        </div>
+        <article>{/*trip preview cards*/}</article>
+      </section>
+      <section>
+        <button onClick={() => setSwitchTab(true)}>Agenda</button>
+        <button onClick={() => setSwitchTab(false)}>
+          Todas las excursiones
+        </button>
+        {switchTab ? (
+          <article>Argenda</article>
+        ) : (
+          <article>Excursiones</article>
         )}
-      </div>
+      </section>
     </main>
   );
 }
